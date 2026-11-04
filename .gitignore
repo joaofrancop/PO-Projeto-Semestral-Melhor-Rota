@@ -6,3 +6,5 @@ venv/
 .env
 legado/saida/
 .venv/
+test_shell.txt
+_run_log.txt
