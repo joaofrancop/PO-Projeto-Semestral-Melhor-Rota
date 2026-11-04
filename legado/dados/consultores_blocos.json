@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "origem": "Cenário sintético — Pesquisa Operacional A2",
+    "empresa_narrativa": "Mastercorp (comercial / viagens externas)",
+    "unidade_custo": "horas (deslocamento + tempo de visita médio)",
+    "anonimizacao": "Nomes genéricos; sem clientes ou coordenadas reais"
+  },
+  "consultores": [
+    { "id": "C1", "rotulo": "Consultor Alpha" },
+    { "id": "C2", "rotulo": "Consultor Beta" },
+    { "id": "C3", "rotulo": "Consultor Gamma" },
+    { "id": "C4", "rotulo": "Consultor Delta" },
+    { "id": "C5", "rotulo": "Consultor Epsilon" }
+  ],
+  "blocos_regionais": [
+    { "id": "R1", "rotulo": "Bloco Norte (cluster A)" },
+    { "id": "R2", "rotulo": "Bloco Sul (cluster B)" },
+    { "id": "R3", "rotulo": "Bloco Leste (cluster C)" },
+    { "id": "R4", "rotulo": "Bloco Oeste (cluster D)" },
+    { "id": "R5", "rotulo": "Bloco Centro (cluster E)" }
+  ],
+  "matriz_custos_arquivo": "matriz_custos_designacao.csv",
+  "nota_custo": "c_ij = custo se consultor i atender bloco j no dia da viagem"
+}

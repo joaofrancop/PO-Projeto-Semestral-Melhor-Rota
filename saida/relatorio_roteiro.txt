@@ -1,0 +1,11 @@
+Relatorio de roteiro (TSP heuristico)
+Clientes selecionados: 15 (ids 1..15)
+Deposito: cust_no=0 em (40.0, 50.0)
+
+Ordem ingenua (1,2,...,n): custo 131.73
+Apos vizinho mais proximo: custo 118.54
+Apos 2-Opt: custo 103.29
+Reducao em relacao a ordem ingenua: 21.6%
+
+Sequencia de cust_no (deposito incluido no inicio e fim):
+0 -> 7 -> 5 -> 3 -> 1 -> 2 -> 4 -> 6 -> 8 -> 9 -> 11 -> 12 -> 14 -> 15 -> 13 -> 10 -> 0

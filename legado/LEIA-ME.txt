@@ -1,0 +1,2 @@
+Rascunho da Trilha 2 (Metodo Hungaro) — nao usar como entrega principal.
+O projeto semestral oficial esta em ../docs/ (Trilha 5, Solomon C102).
