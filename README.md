@@ -1,24 +1,33 @@
-# Projeto semestral: melhor rota de visitas (PO I)
+# Projeto Semestral de Pesquisa Operacional: Otimização de Rota de Visitas (TSP)
 
-Otimização da ordem de visitas a clientes selecionados, com partida e retorno no depósito (hotel), usando a instância Solomon C102 e heurísticas de TSP (vizinho mais próximo e 2-Opt).
+**Equipe:** Guilherme Caleffi, João Franco e Marcio Henrique <br>
+**Tema:** Caixeiro Viajante (TSP) e Roteamento (Heurísticas Construtivas e 2-Opt)
 
-Repositório: https://github.com/joaofrancop/PO-Projeto-Semestral-Melhor-Rota
+## Resumo do Projeto
+Este projeto implementa um motor de otimização em Python (sem uso de bibliotecas de "caixa-preta" para a lógica central) para resolver o Problema do Caixeiro Viajante (TSP) com retorno ao depósito. 
 
-## Estrutura
+O cenário simula uma equipe comercial em viagem externa que deve sair de uma base (hotel), visitar um conjunto selecionado de $X$ clientes e retornar à base, minimizando a distância total percorrida.
 
-- `docs/ENUNCIADO.md`: problema e método em linguagem da disciplina
-- `docs/MODELAGEM-FORMAL.md`: formulacao para o checkpoint
-- `dados/solomon/C102_paradas.csv`: dados
-- `dados_io.py`, `roteiro_tsp.py`: leitura e algoritmo
-- `executar_roteiro.py`: exemplo executável (lista de clientes em `CLIENTES_SELECIONADOS`)
+## Dataset
+Utilizamos a instância pública clássica **Solomon C102** (100 clientes + 1 depósito).
+* Para manter a didática e a clareza visual, o algoritmo permite selecionar um subconjunto de $X$ clientes (ex: 15 clientes) para calcular e exibir a rota ótima.
+* Os dados originais e processados estão disponíveis em [`dados/solomon/`](dados/solomon/).
 
-## Como rodar
+## Algoritmos Implementados (Do Zero)
+1. **Vizinho Mais Próximo (Nearest Neighbor):** Heurística construtiva gulosa para gerar uma rota inicial viável rapidamente.
+2. **Melhoria Local 2-Opt:** Algoritmo de busca local que elimina cruzamentos de arestas (subciclos ineficientes) invertendo segmentos da rota até atingir um ótimo local.
 
-```powershell
+## Estrutura do Repositório
+* `docs/`: Documentação completa (Cenário, Modelagem Formal, Guia do Dataset, Roteiro do Vídeo).
+* `dados/`: Bases de dados (Solomon C102).
+* `roteiro_tsp.py`: Implementação pura das heurísticas TSP e 2-Opt.
+* `dados_io.py` / `solomon_io.py`: Módulos de leitura e processamento dos dados.
+* `executar_roteiro.py`: Script principal de execução e geração de gráficos.
+* `A2_Roteiro_Solomon.ipynb`: Notebook interativo para demonstração.
+* `saida/`: Diretório onde os gráficos (PNG) e relatórios gerados são salvos.
+
+## Como Executar
+```bash
 pip install -r requirements.txt
 python executar_roteiro.py
 ```
-
-Saída em `saida/relatorio_roteiro.txt` e figuras `rota_ingenua.png`, `rota_otimizada.png`.
-
-Para alterar quantos clientes entram no dia, edite a lista `CLIENTES_SELECIONADOS` em `executar_roteiro.py`.
