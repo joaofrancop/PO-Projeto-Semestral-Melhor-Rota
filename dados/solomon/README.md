@@ -1,6 +1,6 @@
 # Solomon C102
 
-- **Origem:** benchmark VRPTW ([SINTEF](https://www.sintef.no/projectweb/top/vrptw/100-customers/)); espelho [GitHub py-ga-VRPTW](https://github.com/phreephree/py-ga-VRPTW/blob/master/data/text/C102.txt).
+- **Origem:** benchmark VRPTW ([Kaggle — Solomon benchmark](https://www.kaggle.com/datasets/jaikeerthy/solomon-benchmark)); espelho [GitHub py-ga-VRPTW](https://github.com/phreephree/py-ga-VRPTW/blob/master/data/text/C102.txt).
 - **`C102.txt`:** instância completa.
 - **`C102_paradas.csv`:** exportado por `python solomon_io.py` na raiz do projeto.
 

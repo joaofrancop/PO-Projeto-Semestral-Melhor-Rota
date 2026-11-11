@@ -11,7 +11,7 @@
 | **`due_date`** | **1236** (= horizonte do dia) | Latest time para **iniciar** a visita |
 | **`service_time`** | **0** | Tempo na parada (**90** na quase totalidade) |
 
-Regra Solomon: **1 unidade de distância = 1 unidade de tempo** (deslocamento e relógio na mesma escala).
+Na interpretação temporal do benchmark, distância e deslocamento podem ser relacionados na mesma escala. **O motor TSP atual usa apenas distância euclidiana** e não calcula horários, duração de rota ou quilômetros reais.
 
 ## “Hotel” no projeto
 
@@ -33,7 +33,7 @@ No código: `depot = df[df.cust_no == 0].iloc[0]`; paradas = `df[df.cust_no > 0]
 
 O arquivo CSV completo (101 linhas) é o **cadastro**; no dia real / no notebook vocês não precisam usar os 100 — só **X escolhidos**.
 
-**Sugestão de X para o trabalho:** 10–25 (fácil de explicar no vídeo); pode testar X=50 ou 100 como desafio se o 2-Opt aguentar no Colab.
+**Recorte atual da apresentação:** X = 15, IDs 1 a 15, definidos em `CLIENTES_SELECIONADOS` no arquivo `executar_roteiro.py`. O notebook importa essa configuração. Outros recortes podem ser usados em experimentos.
 
 **O que ignorar no básico (sem sair do que a aula pede):**
 
@@ -67,6 +67,8 @@ Na **só-TSP** esses campos não mudam a ordem; na **história empresa** (“mar
 
 - Fonte: [`../dados/solomon/C102.txt`](../dados/solomon/C102.txt)
 - Trabalho: [`../dados/solomon/C102_paradas.csv`](../dados/solomon/C102_paradas.csv) (**101 linhas**)
+
+Dataset obtido no [Kaggle — Solomon benchmark](https://www.kaggle.com/datasets/jaikeerthy/solomon-benchmark). São dados de benchmark adaptados para visitas comerciais. O benchmark original é multi-veículo, mas o projeto usa somente uma rota e não garante ótimo global.
 
 Regenerar CSV: `python solomon_io.py` na raiz do projeto.
 
