@@ -12,14 +12,18 @@ Utiliza-se a instância Solomon C102, disponível em `dados/solomon/C102_paradas
 
 As coordenadas `x` e `y` permitem calcular distâncias euclidianas. No benchmark original existem também janelas de tempo (`ready_time`, `due_date`) e tempo de serviço; a primeira versão do projeto concentra-se na minimização da distância de deslocamento. A verificação de janelas pode ser tratada como extensão.
 
+Dataset obtido no [Kaggle — Solomon benchmark](https://www.kaggle.com/datasets/jaikeerthy/solomon-benchmark). A base foi escolhida por oferecer identificadores e coordenadas estruturadas para calcular distâncias e comparar ordens de visita. O benchmark original de roteamento com frota e janelas é adaptado para uma única rota comercial. Demanda e capacidade também ficam fora do escopo atual.
+
+A demonstração usa **15 clientes, IDs 1 a 15**, definidos em `CLIENTES_SELECIONADOS` no script principal. O recorte favorece a visualização. Os valores de distância estão em unidades do benchmark, sem conversão para quilômetros, tempo ou custos financeiros.
+
 ## Método
 
 Conforme a trilha 5 do kickoff da disciplina:
 
 1. Construção da matriz de distâncias entre depósito e clientes selecionados.
 2. Geração de uma solução inicial por vizinho mais próximo, partindo do depósito.
-3. Melhoria local por intercâmbio 2-Opt enquanto houver redução do custo.
-4. Comparação com uma ordem ingênua (sequência crescente dos ids) para avaliar ganho.
+3. Melhoria local por intercâmbio 2-Opt até não encontrar redução do custo ou atingir 500 iterações, sem garantia de ótimo global.
+4. Comparação com uma ordem ingênua (ordem de entrada dos clientes, crescente por ID na demonstração) para avaliar ganho.
 
 A implementação está em `roteiro_tsp.py` e a execução de exemplo em `executar_roteiro.py`.
 
